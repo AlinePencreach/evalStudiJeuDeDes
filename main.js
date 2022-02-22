@@ -10,8 +10,12 @@ function getDiceRoll(){
 
 lancer.addEventListener('click', function() {
     getDiceRoll();
+    diceFace;
 });
 
 
-document.getElementById('diceFace').src = `./images/dice${number}.png`;
+let diceFace = document.getElementById('diceFace');
+diceFace.scr = `./images/dice${number}.png`;
+
+
 
