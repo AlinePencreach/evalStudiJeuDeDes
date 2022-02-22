@@ -29,7 +29,7 @@ button {
     background: none;
 }
 
-#btnSpace p {
+.btnSpace p {
    margin-top: 1rem;
    margin-left: .5rem;
 }
@@ -71,6 +71,8 @@ button {
     display: flex;
     justify-content: center;
     font-size: 5rem;
+    font-weight: lighter; /* n'a pas d'effet pourquoi ? */
+    color: #E04E46;
 }
 
 .roundPlayer {

@@ -1,9 +1,10 @@
-let number = Math.floor(Math.random() * 6) + 1;
+const lancer = document.getElementById("btnLancer");
+let number = Math.floor(Math.random() * 6 ) + 1;
 
-function diceRun(){
+lancer.addEventListener('click', function() {
     console.log(number);
-    let lancer = document.getElementById('btnLancer');
+    number = Math.floor(Math.random() * 6 ) + 1;
     return number;
-}
+});
 
-diceRun();
+
