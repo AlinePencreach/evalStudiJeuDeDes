@@ -95,6 +95,20 @@ svg {
     color: #E04E46;
 }
 
+#cercle {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #E04E46;
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+
+#player1, #player2 {
+    display: flex;
+}
+
+
 /* background color : F6F6F6 le gris*/
 
 

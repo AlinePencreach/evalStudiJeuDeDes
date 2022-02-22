@@ -35,6 +35,18 @@ let lancer = document.getElementById('btnLancer');
 // - collecter id="btnCollecter"
 let collecter = document.getElementById('btnCollecter');
 
+//le cercle rouge 
+let cercle = document.getElementById('cercle');
 
 
-
+newGame.addEventListener('click', function(){
+    globalPlayer1 = 0;
+    globalPlayer2 = 0;
+    roundPlayer1 = 0;
+    roundPlayer2 = 0;
+}) 
+    
+const lancerDeDé = function () {
+    const number = Math.random() * 6 + 1;
+     return number;
+  };
