@@ -1,9 +1,9 @@
 const lancer = document.getElementById("btnLancer");
-let number = Math.floor(Math.random() * 6 ) + 1;
+let number;
 
 lancer.addEventListener('click', function() {
-    console.log(number);
     number = Math.floor(Math.random() * 6 ) + 1;
+    console.log(number);
     return number;
 });
 
