@@ -16,9 +16,9 @@ main {
 
 }
 
-#dice6 {
-    height: 80px;
-    width: 80px;
+#dice {
+    height: 100px;
+    width: 100px;
 }
 
 button {
