@@ -16,7 +16,7 @@ main {
 
 }
 
-.dice {
+#diceFace {
     height: 100px;
     width: 100px;
 }
