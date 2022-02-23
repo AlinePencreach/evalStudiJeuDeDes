@@ -23,7 +23,7 @@ lancer.addEventListener('click', function() {
     imgDiceRoll();
 });
 
-
+//commit pour voir si je suis bien dans la branch github et non local de javascript 
 
 
 
