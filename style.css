@@ -67,7 +67,15 @@ button {
     margin-left: 4rem;
 }
 
-.globalPlayer{
+#globalPlayer1 {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: lighter; /* n'a pas d'effet pourquoi ? */
+    color: #E04E46;
+}
+
+#globalPlayer2 {
     display: flex;
     justify-content: center;
     font-size: 5rem;
