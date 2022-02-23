@@ -1,6 +1,7 @@
 //déclaration des variable du bouton lancer et number :
-const lancer = document.getElementById("btnLancer");
-const diceFace = document.getElementById('diceFace');
+const lancer = document.getElementById('btnLancer');
+const diceFace = document.getElementById('dice');
+
 let number;
 
 //fonction qui retourne un nombre entre 1 et 6 :
@@ -10,13 +11,19 @@ function getDiceRoll(){
     return number;
 }
 
-//  Cliquer sur le bouton lancer appel la fonction getDiceRoll qui donne un nombre aléatoire entre 1 et 6 :
+//fonction qui change la src de l'image en fonction de number : 
+function imgDiceRoll() {
+    diceFace.src = "./images/dice" + number + ".png";
+    console.log(diceFace);
+}
+
+//Evenement au click sur le bouton lancer les fonction getDiceRoll et imgDiceRoll se lance. Retourne un nombre aléatoir et l'image correspondante :
 lancer.addEventListener('click', function() {
     getDiceRoll();
-    diceFace;
+    imgDiceRoll();
 });
 
-diceFace.src = "./images/dice" + number + ".png";
+
 
 
 
