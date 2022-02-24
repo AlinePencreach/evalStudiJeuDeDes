@@ -106,19 +106,12 @@ function randomNumberDice(){
 }
 
 //RETOURNER LE NUMBERDICE DANS LA CASE ROUND:
-//JOUEUR1
-function stockRound1(){
-    resultRound1 = resultRound1 + numberDice;
-    round1 = resultRound1;
-    return resultRound1;
-}
-
-//JOUEUR2
 function stockRound(){
     if (activePlayer === 'player1') {
-        resultRound2 = resultRound2 + numberDice;
-        round2 = resultRound2;
-        return resultRound2;
+        resultRound1 = resultRound1 + numberDice;
+        round1 = resultRound1;
+        console.log(round1);
+        return resultRound1;
     } else {
         resultRound2 = resultRound2 + numberDice;
         round2 = resultRound2;
