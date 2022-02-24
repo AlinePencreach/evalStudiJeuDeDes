@@ -24,7 +24,6 @@ function randomNumberDice(){
     numberDice = Math.floor(Math.random() * 6 ) + 1;
     console.log(numberDice);
     diceFace.src = "./images/dice" + numberDice + ".png";
-    console.log(diceFace);
     return numberDice;
 }
 
@@ -104,7 +103,7 @@ function roundTourPlayer(){
         return resultRound1;
     } else if (activePlayer === 'player2'){
         resultRound2 = resultRound2 + numberDice;
-        round1.innerHTML = resultRound2;
+        round2.innerHTML = resultRound2;
         console.log(resultRound2);
         return resultRound2;
     }
@@ -116,11 +115,17 @@ function looseDiceOne(){
         if (activePlayer === 'player1') {
             activePlayer = 'player2';
             console.log(activePlayer);
-            return resultRound1 = 0;
+            resultRound1 = 0;
+            round1.innerHTML = resultRound1;
+            resultRound2 = 0;
+            round2.innerHTML = resultRound2;
         } else {
             activePlayer = 'player1';
             console.log(activePlayer);
-            return resultRound2 = 0;
+            resultRound2 = 0;
+            round2.innerHTML = resultRound2;
+            resultRound1 = 1;
+            round1.innerHTML = resultRound1;
         }
     }
 }
