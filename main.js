@@ -1,10 +1,10 @@
 //Déclaration de let :
 let activePlayer;
-let number;
-let resultGlobal1 = 0;
-let resultGlobal2 = 0;
-let resultRound1 = 0;
-let resultRound2 = 0;
+let numberDice;
+let resultGlobal1;
+let resultGlobal2;
+let resultRound1;
+let resultRound2;
 
 //declatration de selector:
 let round1 = document.getElementById('roundPlayer1');
@@ -19,19 +19,9 @@ const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
 
 
-// //Nouvelle partie remets les tous les scrore à 0 et active player 1 :
-// function newGameFunc() {
-//     activePlayer = 'player 1';
-//      resultGlobal1 = 0;
-//      resultGlobal2 = 0;
-//      resultRound1 = 0;
-//      resultRound2 = 0;
-//     console.log('vous avez cliquer sur btnNewGame');
-//   }
 
-// newGame.addEventListener('click', function() {
-//     newGameFunc();
-// });
+
+
 
 
 // //fonction qui retourne un nombre entre 1 et 6 :
@@ -107,17 +97,34 @@ const player2 = document.getElementById('player2');
 // }
 
 //REFONTE PAS À PAS :
-
-//ACTIVER UN JOUEUR LORSQU'ON CLICK SUR LE BOUTON NOUVELLE PARTIE ET REMETTRE LA PARTIE A ZERO :
-function startGame(){
-    activePlayer = 'player1';
-    global1 = 0;
-    round1 = 0;
-    global2 = 0;
-    round2 = 0;
-    console.log('Vous venez de cliquer sur le bouton nouvelle partie');
-    console.log(activePlayer);
+//CREATION DE LA FONCTION QUI RETOURNE UN NOMBRE ALEATOIRE ENTRE 1 ET 6 :
+function randomNumberDice(){
+    numberDice = Math.floor(Math.random() * 6 ) + 1;
+    console.log(numberDice);
+    diceFace.src = "./images/dice" + numberDice + ".png";
+    return numberDice;
 }
+
+//RETOURNER LE NUMBERDICE DANS LA CASE ROUND:
+//JOUEUR1
+function stockRound1(){
+    resultRound1 = resultRound1 + numberDice;
+    round1 = resultRound1;
+    return resultRound1;
+}
+
+//JOUEUR2
+function stockRound(){
+    if (activePlayer === 'player1') {
+        resultRound2 = resultRound2 + numberDice;
+        round2 = resultRound2;
+        return resultRound2;
+    } else {
+        resultRound2 = resultRound2 + numberDice;
+        round2 = resultRound2;
+        return resultRound2;
+    }   
+};
 
 //FONCTION QUI PERMET DE SWITCHER DE JOUEUR:
 function switchPlayer(){
@@ -128,6 +135,19 @@ function switchPlayer(){
     }
     console.log(activePlayer);
 }
+
+
+//ACTIVER UN JOUEUR LORSQU'ON CLICK SUR LE BOUTON NOUVELLE PARTIE ET REMETTRE LA PARTIE A ZERO :
+function startGame(){
+    activePlayer = 'player1';
+    global1.textContent = 0;
+    round1.textContent = 0;
+    global2.textContent = 0;
+    round2.textContent = 0;
+    console.log('Vous venez de cliquer sur le bouton nouvelle partie');
+    console.log(activePlayer);
+}
+
 
 //FONCTION QUI PERMET DE METTRE LE POINT ROUGE SUR LE JOUEUR ACTIF:
 function activePlayerStyle(){
@@ -163,11 +183,18 @@ function activePlayerStyle(){
 
 
 
+    
+
 
 newGame.addEventListener('click', function(){
     startGame();
     activePlayerStyle();
 });
+
+lancer.addEventListener('click', function(){
+    randomNumberDice();
+    stockRound();
+})
 
 collecter.addEventListener('click', function(){
     switchPlayer();
