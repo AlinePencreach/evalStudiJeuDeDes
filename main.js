@@ -1,37 +1,38 @@
-//déclaration du bouton lancer :
-const lancer = document.getElementById('btnLancer');
-
-//déclaration de Id dice l'image de dés :
-const diceFace = document.getElementById('dice');
-
-//déclaration des résultats des rounds :
-let round1 = document.getElementById('roundPlayer1');
-let round2 = document.getElementById('roundPlayer2');
+//Déclaration de let :
+let activePlayer;
+let number;
+let resultGlobal1 = 0;
+let resultGlobal2 = 0;
 let resultRound1 = 0;
 let resultRound2 = 0;
 
-//declaration du bouton collecter:
-const collecter = document.getElementById('btnCollecter');
-
-//déclation les globalPlayer1 et globalPlayer2 a 0:
+//declatration de selector:
+let round1 = document.getElementById('roundPlayer1');
+let round2 = document.getElementById('roundPlayer2');
 let global1 = document.getElementById('globalPlayer1');
 let global2 = document.getElementById('globalPlayer2');
-let resultGlobal1 = 0;
-let resultGlobal2 = 0;
-
-//déclaration du bouton nouvelle partie :
 const newGame = document.getElementById('btnNewGame');
-
-//Déclaration players : 
-let joueur = 'player1';
+const diceFace = document.getElementById('dice');
+const lancer = document.getElementById('btnLancer');
+const collecter = document.getElementById('btnCollecter');
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
 
-//déclaration de number qui est le resultat du dès lancer:
-let number;
 
+//Nouvelle partie remets les tous les scrore à 0 et active player 1 :
+function newGameFunc() {
+    activePlayer = 'player 1';
+     resultGlobal1 = 0;
+     resultGlobal2 = 0;
+     resultRound1 = 0;
+     resultRound2 = 0;
+    console.log('vous avez cliquer sur btnNewGame');
+  }
 
-//------------------------Fovntion:
+newGame.addEventListener('click', function() {
+    newGameFunc();
+});
+
 
 //fonction qui retourne un nombre entre 1 et 6 :
 function getDiceRoll(){
@@ -39,6 +40,7 @@ function getDiceRoll(){
     console.log(number);
     return number;
 };
+
 
 //fonction qui change la src de l'image en fonction de number : 
 function imgDiceRoll() {
@@ -51,8 +53,9 @@ lancer.addEventListener('click', function() {
     getDiceRoll();
     imgDiceRoll();
     stockRound1();
-    stockRound2();
+    // stockRound2();
 });
+
 
 //Récuperer number et l'afficher dans point du joueur soit roundPlayer1 ou roundPlayer2 selon le joueur active :
 //JOUEUR1
@@ -68,6 +71,7 @@ function stockRound2(){
     round2.innerHTML = resultRound2;
     return resultRound2;
 }
+
 
 //Lorsqu'on click sur collecter le resultRound va dans globalPlayer1 et 2:
 function stockPlayer1(){
@@ -90,23 +94,14 @@ function stockPlayer2(){
 collecter.addEventListener('click', function() {
     stockPlayer1();
     stockPlayer2();
-    joueurActive();
 });
 
-//si le dès fait 1 remise a zero du round et perds le activeplayer :
-function joueurActive() {
-    if (joueur == 'player1') {
-        if (number === 1) {
-            joueur = 'player2';
-            resultround1 = 0;
-        } else{joueur = 'player1';}
 
-    } else if (joueur == 'player2') {
-        if (number === 1) {
-            joueur = 'player1';
-            resultround2 = 0;
-        }else {
-            joueur = 'player2';
-        }
+//Foction que change le jouer
+function switchPlayer() {
+    if (activePlayer === 'player 1') {
+      activePlayer = 'player 2';
+    } else {
+      activePlayer = 'player 1';
     }
-};    
+}
