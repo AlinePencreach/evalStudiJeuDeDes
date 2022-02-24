@@ -158,7 +158,7 @@ function activePlayerStyle(){
             cercle1.style.marginLeft = '';
             cercle1.style.marginTop = '';
     } 
-};
+} 
 
 
 
