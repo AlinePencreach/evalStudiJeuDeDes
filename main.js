@@ -145,3 +145,5 @@ collecter.addEventListener('click', function(){
     switchPlayer();
     activePlayerStyle();
 });
+
+//test debut journée pour git
