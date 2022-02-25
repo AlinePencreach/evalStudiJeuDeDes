@@ -17,7 +17,6 @@ const collecter = document.getElementById('btnCollecter');
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
 
-//REFONTE PAS À PAS :
 
 //CREATION DE LA FONCTION QUI RETOURNE UN NOMBRE ALEATOIRE ENTRE 1 ET 6 :
 function randomNumberDice(){
@@ -80,16 +79,16 @@ function activePlayerStyle(){
     } 
 } 
 
-//FONCTION QUI STOCK LES POINTS :
+//FONCTION QUI STOCK LES POINTS DANS ROUND:
 function roundTourPlayer(){
     if (activePlayer === 'player1') {
         resultRound1 = resultRound1 + numberDice;
-        round1.innerHTML = resultRound1;
+        round1.textContent = resultRound1;
         console.log(`le total du round 1 est : ${resultRound1}`);
         return resultRound1;
     } else if (activePlayer === 'player2'){
         resultRound2 = resultRound2 + numberDice;
-        round2.innerHTML = resultRound2;
+        round2.textContent = resultRound2;
         console.log(`le total du round 2 est : ${resultRound2}`);
         return resultRound2;
     }
@@ -99,13 +98,13 @@ function roundTourPlayer(){
 function globalPlayer() {
     if (activePlayer === 'player1') {
         resultGlobal1 = resultRound1 + resultGlobal1;
-        global1.innerHTML = resultGlobal1;
+        global1.textContent = resultGlobal1;
         resultRound1 = 0;
         round1.textContent = 0;
         console.log(`le total du joueur 1 est : ${resultGlobal1}`);
     } else if (activePlayer === 'player2') {
         resultGlobal2 = resultRound2 + resultGlobal2;
-        global2.innerHTML = resultGlobal2;
+        global2.textContent = resultGlobal2;
         resultRound2 = 0;
         round2.textContent = 0;
         console.log(`le total du joueur 2 est : ${resultGlobal2}`);
@@ -128,28 +127,19 @@ function looseDiceOne(){
             activePlayer = 'player2';
             console.log(activePlayer);
             resultRound1 = 0;
-            round1.innerHTML = resultRound1;
+            round1.textContent = resultRound1;
             resultRound2 = 0;
-            round2.innerHTML = resultRound2;
+            round2.textContent = resultRound2;
         } else {
             activePlayer = 'player1';
             console.log(activePlayer);
             resultRound2 = 0;
-            round2.innerHTML = resultRound2;
+            round2.textContent = resultRound2;
             resultRound1 = 0;
-            round1.innerHTML = resultRound1;
+            round1.textContent = resultRound1;
         }
     }
 }
-
-
-
-
-
-
-
-
-
 
 //APPEL DES LISTENER :
 newGame.addEventListener('click', function(){
