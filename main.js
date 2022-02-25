@@ -97,13 +97,29 @@ function roundTourPlayer(){
 
 //FONCTION QUI SAUVEGARDE LES POINTS DANS SCORE GLOBAL :
 function globalPlayer() {
-    // resultGlobal1 = resultGlobal1 + resultRound1;
-    // global1.textContent = resultGlobal1;
-    console.log(resultGlobal1 = resultRound1 + resultGlobal1);
-    global1.innerHTML = resultGlobal1;
-    console.log(`global1 : ${global1} et resultGlobal1 : ${resultGlobal1}`);
-
+    if (activePlayer === 'player1') {
+        resultGlobal1 = resultRound1 + resultGlobal1;
+        global1.innerHTML = resultGlobal1;
+        resultRound1 = 0;
+        round1.textContent = 0;
+        console.log(`le total du joueur 1 est : ${resultGlobal1}`);
+    } else if (activePlayer === 'player2') {
+        resultGlobal2 = resultRound2 + resultGlobal2;
+        global2.innerHTML = resultGlobal2;
+        resultRound2 = 0;
+        round2.textContent = 0;
+        console.log(`le total du joueur 2 est : ${resultGlobal2}`);
+    }
 };
+
+//FONCTION QUI ANNONCE LE GAGNANT:
+function winner() {
+    if (resultGlobal1 >= 100) {
+        alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
+    } else if (resultGlobal2 >= 100) {
+        alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
+    }
+}
 
 //SI LE DES FAIT 1 LES POINTS TOMBENT A ZERO ET ON CHANGE DE JOUEUR :
 function looseDiceOne(){
@@ -147,8 +163,9 @@ lancer.addEventListener('click', function(){
     activePlayerStyle();
 })
 collecter.addEventListener('click', function(){
-    // switchPlayer();
-    // activePlayerStyle();
     globalPlayer();
+    switchPlayer();
+    activePlayerStyle();
+    winner();
 });
 
