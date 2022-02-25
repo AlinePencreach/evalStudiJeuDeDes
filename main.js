@@ -22,7 +22,7 @@ const player2 = document.getElementById('player2');
 //CREATION DE LA FONCTION QUI RETOURNE UN NOMBRE ALEATOIRE ENTRE 1 ET 6 :
 function randomNumberDice(){
     numberDice = Math.floor(Math.random() * 6 ) + 1;
-    console.log(numberDice);
+    console.log(`le dès a fait : ${numberDice}`);
     diceFace.src = "./images/dice" + numberDice + ".png";
     return numberDice;
 }
@@ -81,35 +81,29 @@ function activePlayerStyle(){
 } 
 
 //FONCTION QUI STOCK LES POINTS :
-// function roundPlayer1(){
-//     resultRound1 = resultRound1 + numberDice;
-//     round1.innerHTML = resultRound1;
-//     console.log(resultRound1);
-//     return resultRound1;
-// };
-
-// function roundPlayer2(){
-//     resultRound2 = resultRound2 + numberDice;
-//     round1.innerHTML = resultRound2;
-//     console.log(resultRound2);
-//     return resultRound2;
-// };
-
 function roundTourPlayer(){
     if (activePlayer === 'player1') {
         resultRound1 = resultRound1 + numberDice;
         round1.innerHTML = resultRound1;
-        console.log(resultRound1);
+        console.log(`le total du round 1 est : ${resultRound1}`);
         return resultRound1;
     } else if (activePlayer === 'player2'){
         resultRound2 = resultRound2 + numberDice;
         round2.innerHTML = resultRound2;
-        console.log(resultRound2);
+        console.log(`le total du round 2 est : ${resultRound2}`);
         return resultRound2;
     }
-}
+};
 
+//FONCTION QUI SAUVEGARDE LES POINTS DANS SCORE GLOBAL :
+function globalPlayer() {
+    resultGlobal1 = resultGlobal1 + resultRound1;
+    global1.textContent = resultGlobal1;
+    console.log(resultGlobal1);
+    return resultGlobal1;
+};
 
+//SI LE DES FAIT 1 LES POINTS TOMBENT A ZERO ET ON CHANGE DE JOUEUR :
 function looseDiceOne(){
     if (numberDice === 1) {
         if (activePlayer === 'player1') {
@@ -124,11 +118,20 @@ function looseDiceOne(){
             console.log(activePlayer);
             resultRound2 = 0;
             round2.innerHTML = resultRound2;
-            resultRound1 = 1;
+            resultRound1 = 0;
             round1.innerHTML = resultRound1;
         }
     }
 }
+
+
+
+
+
+
+
+
+
 
 //APPEL DES LISTENER :
 newGame.addEventListener('click', function(){
@@ -144,6 +147,6 @@ lancer.addEventListener('click', function(){
 collecter.addEventListener('click', function(){
     switchPlayer();
     activePlayerStyle();
+    globalPlayer();
 });
 
-//test debut journée pour git
