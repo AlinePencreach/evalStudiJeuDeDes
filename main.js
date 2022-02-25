@@ -1,8 +1,8 @@
 //Déclaration de let :
 let activePlayer;
 let numberDice;
-let resultGlobal1;
-let resultGlobal2;
+let resultGlobal1 = 0;
+let resultGlobal2 = 0;
 let resultRound1 = 0;
 let resultRound2 = 0;
 //declatration de selector:
@@ -97,10 +97,12 @@ function roundTourPlayer(){
 
 //FONCTION QUI SAUVEGARDE LES POINTS DANS SCORE GLOBAL :
 function globalPlayer() {
-    resultGlobal1 = resultGlobal1 + resultRound1;
-    global1.textContent = resultGlobal1;
-    console.log(resultGlobal1);
-    return resultGlobal1;
+    // resultGlobal1 = resultGlobal1 + resultRound1;
+    // global1.textContent = resultGlobal1;
+    console.log(resultGlobal1 = resultRound1 + resultGlobal1);
+    global1.innerHTML = resultGlobal1;
+    console.log(`global1 : ${global1} et resultGlobal1 : ${resultGlobal1}`);
+
 };
 
 //SI LE DES FAIT 1 LES POINTS TOMBENT A ZERO ET ON CHANGE DE JOUEUR :
@@ -145,8 +147,8 @@ lancer.addEventListener('click', function(){
     activePlayerStyle();
 })
 collecter.addEventListener('click', function(){
-    switchPlayer();
-    activePlayerStyle();
+    // switchPlayer();
+    // activePlayerStyle();
     globalPlayer();
 });
 
