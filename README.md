@@ -1,5 +1,6 @@
 # evalStudiJeuDeDes
 Lien du jeu : https://alinepencreach.github.io/evalStudiJeuDeDes/
+!!! CLIQUER SUR NOUVELLE PARTIE POUR COMMENCER !!!
 
 Cette évaluation du module Dynamiser vos sites web avec Javascript évalue les compétences suivantes du métier visé,
 selon le référentiel de certification :
