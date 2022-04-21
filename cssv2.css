@@ -2,6 +2,7 @@ body {
     background: linear-gradient(to right, #F6F6F6 0% 50%, white 50% 0%);
     height: 100vh;
     width: 100vw;
+    overflow: hidden
 }
 
 .diceFace {
@@ -12,5 +13,23 @@ body {
 .gameSection {
     position: absolute;
     bottom: 1px;
-    
+}
+
+@media screen and (max-width: 768px) {
+    .gameSection {
+        bottom: 30%;
+    }
+}
+
+.gray {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+}
+
+footer {
+    font-size: .5rem;
+    position: absolute;
+    bottom: 0%;
 }
