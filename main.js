@@ -42,13 +42,20 @@ function switchPlayer(){
 };
 
 // FONCTION POUR DEFINIR L'ACTIVE PLAYER :
-function getRandomInt() {
+function getRandomIntLancer() {
     if (tour === 0) {
         tour =  Math.floor(Math.random() * 2) + 1;
         console.log(`function getRandomInt la valeur de tour est ${tour}`)
         return activePlayer = `player${tour}`;
         // console.log(`function startGame l'active player est ${activePlayer}`);
     }
+  };
+
+  function getRandomIntStart() {
+        tour =  Math.floor(Math.random() * 2) + 1;
+        console.log(`function getRandomInt la valeur de tour est ${tour}`)
+        return activePlayer = `player${tour}`;
+        // console.log(`function startGame l'active player est ${activePlayer}`);
   };
 
 
@@ -161,12 +168,12 @@ function looseDiceOne(){
 
 //APPEL DES LISTENER :
 newGame.addEventListener('click', function(){
-    getRandomInt();
+    getRandomIntStart();
     startGame();
     activePlayerStyle();
 });
 lancer.addEventListener('click', function(){
-    getRandomInt();
+    getRandomIntLancer()
     randomNumberDice();
     roundTourPlayer();
     looseDiceOne();
