@@ -137,15 +137,15 @@ function globalPlayer() {
 };
 
 // FONCTION QUI ANNONCE LE GAGNANT:
-let inputs = document.getElementById("Modal1");
-
 function winner() {
-    if (resultGlobal1 >= 1) {
-       
+    if (resultGlobal1 >= 100) {
+        $('#Modal1').modal('show');
     } else if (resultGlobal2 >= 100) {
-
+        $('#Modal2').modal('show');
     }
 }
+
+
 
 //SI LE DES FAIT 1 LES POINTS TOMBENT A ZERO ET ON CHANGE DE JOUEUR :
 function looseDiceOne(){
