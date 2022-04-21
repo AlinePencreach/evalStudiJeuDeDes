@@ -6,6 +6,7 @@ let resultGlobal1 = 0;
 let resultGlobal2 = 0;
 let resultRound1 = 0;
 let resultRound2 = 0;
+// let winner = document.querySelectorById('"exampleModal');
 // let player_1 = ['player1', 1]
 // let player_2 = ['player2', 2]
 //declatration de selector:
@@ -135,12 +136,14 @@ function globalPlayer() {
     }
 };
 
-//FONCTION QUI ANNONCE LE GAGNANT:
+// FONCTION QUI ANNONCE LE GAGNANT:
+let inputs = document.getElementById("Modal1");
+
 function winner() {
-    if (resultGlobal1 >= 100) {
-        Elt.innerHTML = 'Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie';
+    if (resultGlobal1 >= 1) {
+       
     } else if (resultGlobal2 >= 100) {
-        alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
+
     }
 }
 
@@ -166,6 +169,10 @@ function looseDiceOne(){
 }
 
 
+// winner.addEventListener(function(){
+//     if (resultGlobal1 >= 10) {
+        
+// })
 //APPEL DES LISTENER :
 newGame.addEventListener('click', function(){
     getRandomIntStart();
