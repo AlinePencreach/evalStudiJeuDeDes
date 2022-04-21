@@ -31,4 +31,4 @@ tour de l’autre joueur.
 Le premier joueur qui atteint les 100 points sur global gagne le jeu.
 
 TEMPS DE REALISATION DU PROJET : 21 heures.
-(mise à jour pour le responsive en cours)
+
