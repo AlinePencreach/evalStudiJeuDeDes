@@ -41,11 +41,14 @@ function switchPlayer(){
     }
 };
 
+// FONCTION POUR DEFINIR L'ACTIVE PLAYER :
 function getRandomInt() {
-    tour =  Math.floor(Math.random() * 2) + 1;
-    console.log(`function getRandomInt la valeur de tour est ${tour}`)
-    return activePlayer = `player${tour}`;
-    // console.log(`function startGame l'active player est ${activePlayer}`);
+    if (tour === 0) {
+        tour =  Math.floor(Math.random() * 2) + 1;
+        console.log(`function getRandomInt la valeur de tour est ${tour}`)
+        return activePlayer = `player${tour}`;
+        // console.log(`function startGame l'active player est ${activePlayer}`);
+    }
   };
 
 
@@ -92,6 +95,7 @@ function activePlayerStyle(){
     } 
 } 
 
+
 //FONCTION QUI STOCK LES POINTS DANS ROUND:
 function roundTourPlayer(){
     if (activePlayer === 'player1') {
@@ -127,15 +131,9 @@ function globalPlayer() {
 //FONCTION QUI ANNONCE LE GAGNANT:
 function winner() {
     if (resultGlobal1 >= 100) {
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-          })
-        // alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
+        Elt.innerHTML = 'Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie';
     } else if (resultGlobal2 >= 100) {
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-          })
-        // alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
+        alert ('Le joueur 1 remporte la partie. BRAVO !!! Pour recommencer cliquez sur nouvelle partie')
     }
 }
 
@@ -168,6 +166,7 @@ newGame.addEventListener('click', function(){
     activePlayerStyle();
 });
 lancer.addEventListener('click', function(){
+    getRandomInt();
     randomNumberDice();
     roundTourPlayer();
     looseDiceOne();
