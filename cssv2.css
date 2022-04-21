@@ -1,0 +1,16 @@
+body {
+    background: linear-gradient(to right, #F6F6F6 0% 50%, white 50% 0%);
+    height: 100vh;
+    width: 100vw;
+}
+
+.diceFace {
+    width: 7em;
+    height: 7em;
+}
+
+.gameSection {
+    position: absolute;
+    bottom: 1px;
+    
+}

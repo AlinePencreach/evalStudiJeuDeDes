@@ -10,9 +10,10 @@ body {
 
 main {
     max-width: 50%;
-    min-width: 200px;
-    margin-left: 25vw;
+    /* min-width: 200px; */
+    /* margin-left: 25vw; */
     background: linear-gradient(to right, #F6F6F6 0% 50%, white 50% 0%);
+
 
 }
 
